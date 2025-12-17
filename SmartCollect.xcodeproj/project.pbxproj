@@ -6,14 +6,39 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		349746892EF28DDA00B22582 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 349746882EF28DDA00B22582 /* FirebaseAuth */; };
+		3497468B2EF28DDF00B22582 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 3497468A2EF28DDF00B22582 /* FirebaseDatabase */; };
+		3497468D2EF28DE400B22582 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 3497468C2EF28DE400B22582 /* FirebaseFirestore */; };
+		349746922EF2ADD100B22582 /* GoogleMaps in Frameworks */ = {isa = PBXBuildFile; productRef = 349746912EF2ADD100B22582 /* GoogleMaps */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		349746342EF26E9100B22582 /* SmartCollect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartCollect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		349746942EF2AEFD00B22582 /* Exceptions for "SmartCollect" folder in "SmartCollect" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 349746332EF26E9100B22582 /* SmartCollect */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		349746362EF26E9100B22582 /* SmartCollect */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				349746942EF2AEFD00B22582 /* Exceptions for "SmartCollect" folder in "SmartCollect" target */,
+			);
 			path = SmartCollect;
+			sourceTree = "<group>";
+		};
+		349746952EF2B0BB00B22582 /* Maps */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Maps;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -23,6 +48,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				349746922EF2ADD100B22582 /* GoogleMaps in Frameworks */,
+				3497468B2EF28DDF00B22582 /* FirebaseDatabase in Frameworks */,
+				349746892EF28DDA00B22582 /* FirebaseAuth in Frameworks */,
+				3497468D2EF28DE400B22582 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -32,7 +61,9 @@
 		3497462B2EF26E9100B22582 = {
 			isa = PBXGroup;
 			children = (
+				349746952EF2B0BB00B22582 /* Maps */,
 				349746362EF26E9100B22582 /* SmartCollect */,
+				349746872EF28DDA00B22582 /* Frameworks */,
 				349746352EF26E9100B22582 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +74,13 @@
 				349746342EF26E9100B22582 /* SmartCollect.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		349746872EF28DDA00B22582 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -62,9 +100,14 @@
 			);
 			fileSystemSynchronizedGroups = (
 				349746362EF26E9100B22582 /* SmartCollect */,
+				349746952EF2B0BB00B22582 /* Maps */,
 			);
 			name = SmartCollect;
 			packageProductDependencies = (
+				349746882EF28DDA00B22582 /* FirebaseAuth */,
+				3497468A2EF28DDF00B22582 /* FirebaseDatabase */,
+				3497468C2EF28DE400B22582 /* FirebaseFirestore */,
+				349746912EF2ADD100B22582 /* GoogleMaps */,
 			);
 			productName = SmartCollect;
 			productReference = 349746342EF26E9100B22582 /* SmartCollect.app */;
@@ -94,6 +137,10 @@
 			);
 			mainGroup = 3497462B2EF26E9100B22582;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				349746862EF28D8D00B22582 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				349746902EF2ADD100B22582 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 349746352EF26E9100B22582 /* Products */;
 			projectDirPath = "";
@@ -249,10 +296,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = DNTW37LZ27;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SmartCollect/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Location is used to track vehicles only when the driver starts a trip.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app shows vehicle locations on map";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -263,8 +316,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.SmartCollect;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AddressScanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = AddressScannerProvisoningProfile;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
@@ -280,10 +335,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = DNTW37LZ27;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SmartCollect/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Location is used to track vehicles only when the driver starts a trip.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app shows vehicle locations on map";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -294,8 +355,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.SmartCollect;
+				PRODUCT_BUNDLE_IDENTIFIER = com.AddressScanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = AddressScannerProvisoningProfile;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
@@ -328,6 +391,48 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		349746862EF28D8D00B22582 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.7.0;
+			};
+		};
+		349746902EF2ADD100B22582 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googlemaps/ios-maps-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		349746882EF28DDA00B22582 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 349746862EF28D8D00B22582 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		3497468A2EF28DDF00B22582 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 349746862EF28D8D00B22582 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		3497468C2EF28DE400B22582 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 349746862EF28D8D00B22582 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		349746912EF2ADD100B22582 /* GoogleMaps */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 349746902EF2ADD100B22582 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */;
+			productName = GoogleMaps;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3497462C2EF26E9100B22582 /* Project object */;
 }
